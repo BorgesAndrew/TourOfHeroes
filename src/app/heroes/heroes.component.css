@@ -1,3 +1,4 @@
+
 .selecionado {
   background-color: rgb(240, 158, 51) !important;
   color: #ffffff;
@@ -19,7 +20,7 @@
   border-radius: 4px;
 }
 .heroes li.selecionado:hover {
-  background-color: #BBD8DC !important;
+  background-color: rgb(240, 158, 51) !important;
   color: #ffffff;
 }
 .heroes li:hover {
@@ -47,3 +48,4 @@
   border-radius: 4px 0 0 4px;
  
 }
+
