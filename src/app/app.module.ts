@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms'; // import para que o Ngmodel funci
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroiDetalheComponent } from './heroi-detalhe/heroi-detalhe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroiDetalheComponent
   ],
   imports: [
     BrowserModule,
