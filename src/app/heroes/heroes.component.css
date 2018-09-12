@@ -1,6 +1,6 @@
 .selecionado {
-  background-color: #BBD8DC !important;
-  color: rgb(228, 120, 49);
+  background-color: rgb(240, 158, 51) !important;
+  color: #ffffff;
 }
 .heroes {
   margin: 0 0 2em 0;
@@ -20,11 +20,11 @@
 }
 .heroes li.selecionado:hover {
   background-color: #BBD8DC !important;
-  color: rgb(228, 120, 49);
+  color: #ffffff;
 }
 .heroes li:hover {
-  color: rgb(228, 120, 49);
-  background-color: #DDD;
+  color: #ffffff;
+  background-color: rgb(228, 120, 49);
   left: .1em;
 }
 .heroes .text {
@@ -43,5 +43,7 @@
   top: -4px;
   height: 1.8em;
   margin-right: .8em;
+  border-right: 1px solid #f1f1f1;
   border-radius: 4px 0 0 4px;
+ 
 }
