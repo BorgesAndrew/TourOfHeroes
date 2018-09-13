@@ -3,7 +3,6 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Heroi } from './heroi';
 import { catchError, map, tap } from 'rxjs/operators';
-import { HEROIS } from './mock-heroes';
 import { MessageService } from './message.service';
 
 const httpOptions = {
@@ -30,13 +29,19 @@ export class HeroiService {
   getHeroi(id: number): Observable<Heroi> {
     const url = `${this.heroesUrl}/${id}`;
     return this.http.get<Heroi>(url)
-    .pipe(tap(_ => this.log(`fetched heroi id= ${id}`)),
-    catchError(this.handleError<Heroi>(`getHero id= ${id}`)));
+      .pipe(tap(_ => this.log(`fetched heroi id= ${id}`)),
+        catchError(this.handleError<Heroi>(`getHero id= ${id}`)));
   }
-  updateHeroi(heroi: Heroi): Observable<any>{
+  updateHeroi(heroi: Heroi): Observable<any> {
     return this.http.put(this.heroesUrl, heroi, httpOptions).
-    pipe(tap(_ => this.log(`Heroi atualizado id= ${heroi.id}`)),
-    catchError(this.handleError<any>('updateHero'))
+      pipe(tap(_ => this.log(`Heroi atualizado id= ${heroi.id}`)),
+        catchError(this.handleError<any>('updateHero'))
+      );
+  }
+  addHeroi(heroi: Heroi): Observable<Heroi> {
+    return this.http.post<Heroi>(this.heroesUrl, heroi, httpOptions).pipe(
+      tap(( heroi: Heroi) => this.log(`Heroi adicionado w/ id=${heroi.id}`)),
+      catchError(this.handleError<Heroi>('addHeroi'))
     );
   }
 

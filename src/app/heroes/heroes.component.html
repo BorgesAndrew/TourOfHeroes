@@ -10,4 +10,12 @@
     </a>
   </li>
 </ul>
+<div>
+    <label>Novo heroi
+      <input #heroiNome />
+    </label>
+    <button (click)="add(heroiNome.value); heroiNome.value=''">
+      adicionar Heroi
+    </button>
+  </div>
 
