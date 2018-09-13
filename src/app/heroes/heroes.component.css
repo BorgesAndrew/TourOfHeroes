@@ -4,7 +4,8 @@
   color: #ffffff;
 }
 .heroes {
-  margin: 0 0 2em 0;
+  margin: 0 0 5em 0;
+  
   list-style-type: none;
   padding: 0;
   width: 15em;
@@ -23,11 +24,7 @@
   background-color: rgb(240, 140, 77) !important;
   color: #ffffff;
 }
-.heroes li:hover {
-  color: #ffffff;
-  background-color: rgb(240, 140, 77);
-  left: .1em;
-}
+
 .heroes .text {
   position: relative;
   top: -3px;
@@ -37,16 +34,17 @@
   font-size: small;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color: rgb(228, 120, 49);
+  background-color: rgb(240, 140, 77);
   line-height: 1em;
   position: relative;
   left: -1px;
   top: -4px;
   height: 1.8em;
+  min-width: 16px;
+  text-align: right;
   margin-right: .8em;
-  border-right: 1px solid #f1f1f1;
   border-radius: 4px 0 0 4px;
- 
+  border-right: 1px solid #f1f1f1;
 }
 .heroes a {
   color: #888;
@@ -74,11 +72,11 @@ input {
   border-radius: 5px 5px;
 }
 button {
-  margin-top: 20px;
+
   font-family: Arial;
   background-color: #eee;
   border: none;
-  margin-left:3px; 
+  margin-left: 3px;
   padding: 8px 8px;
   border-radius: 4px;
   cursor: pointer; cursor: hand;
@@ -93,4 +91,16 @@ button:hover {
   background-color: rgb(228, 120, 49);
   
 }
-
+button.delete {
+  position: relative;
+  left: 221px;
+  top: -38px;
+  background-color: rgb(189, 36, 36) !important;
+  padding: 10px 10px 10px;
+  color: white;
+}
+.heroes li:hover {
+  color: #ffffff;
+  background-color: rgb(240, 140, 77);
+  left: .1em;
+}
