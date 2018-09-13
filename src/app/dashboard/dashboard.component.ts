@@ -1,6 +1,7 @@
-import { HeroiService } from './../heroi.service';
+
 import { Component, OnInit } from '@angular/core';
 import { Heroi } from '../heroi';
+import { HeroiService } from './../heroi.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,16 +10,14 @@ import { Heroi } from '../heroi';
 })
 export class DashboardComponent implements OnInit {
 
-    herois: Heroi[] = [];
-  constructor(private HeroiService: HeroiService) { }
+  herois: Heroi[] = [];
+  constructor(private heroiService: HeroiService) { }
 
+
+  getHerois(): void {
+    this.heroiService.getHerois().subscribe(herois => this.herois = herois.slice(0, 2));
+  }
   ngOnInit() {
     this.getHerois();
   }
-
-  getHerois(): void {
-this.HeroiService.getHerois().subscribe(herois => this.herois.slice(1, 5));
-
-  }
-
 }
