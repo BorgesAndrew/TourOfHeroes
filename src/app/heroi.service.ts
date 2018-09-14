@@ -23,24 +23,24 @@ export class HeroiService {
     }
     getHerois(): Observable<Heroi[]> {
         return this.http.get<Heroi[]>(this.heroesUrl)
-            .pipe(tap(herois => this.log('Fetched Herois')),
+            .pipe(tap(herois => this.log('Buscado Herois')),
                 catchError(this.handleError('getHerois', [])));
     }
     getHeroi(id: number): Observable<Heroi> {
         const url = `${this.heroesUrl}/${id}`;
         return this.http.get<Heroi>(url)
-            .pipe(tap(_ => this.log(`fetched heroi id= ${id}`)),
+            .pipe(tap(_ => this.log(`buscado heroi id= ${id}`)),
                 catchError(this.handleError<Heroi>(`getHero id= ${id}`)));
     }
     updateHeroi(heroi: Heroi): Observable<any> {
         return this.http.put(this.heroesUrl, heroi, httpOptions).
             pipe(tap(_ => this.log(`Heroi atualizado id= ${heroi.id}`)),
-                catchError(this.handleError<any>('updateHero'))
+                catchError(this.handleError<any>('updateHeroi'))
             );
     }
     addHeroi(heroi: Heroi): Observable<Heroi> {
         return this.http.post<Heroi>(this.heroesUrl, heroi, httpOptions).pipe(
-            tap((heroi: Heroi) => this.log(`Heroi adicionado w/ id=${heroi.id}`)),
+            tap((heroi: Heroi) => this.log(`Heroi adicionado  id=${heroi.id}`)),
             catchError(this.handleError<Heroi>('addHeroi'))
         );
     }
@@ -50,11 +50,10 @@ export class HeroiService {
 
         return this.http.delete<Heroi>(url, httpOptions).pipe(
             tap(_ => this.log(` heroi deletado id=${id}`)),
-            catchError(this.handleError<Heroi>('deleteHero'))
+            catchError(this.handleError<Heroi>('deleteHeroi'))
         );
 
     }
-
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
             console.error(error);
@@ -68,7 +67,7 @@ export class HeroiService {
         }
         return this.http.get<Heroi[]>(`${this.heroesUrl}/?nome=${palavra}`).pipe(
             tap(_ => this.log(`heróis encontrados correspondentes "${palavra}"`)),
-            catchError(this.handleError<Heroi[]>(`pesquisa Herois`, []))
+            catchError(this.handleError<Heroi[]>(`pesquisaHerois`, []))
         );
     }
 }
