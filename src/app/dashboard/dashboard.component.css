@@ -24,6 +24,7 @@
     min-width: 120px;
     background-color: #eee;
     border-radius: 2px;
+    display: inline-block;
   
   }
   .module:hover {
@@ -33,5 +34,6 @@
   }
   .grid-pad {
     padding: 10px 0;
+    display: block;
     
   }
