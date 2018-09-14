@@ -29,7 +29,7 @@ import { PesquisaHeroiComponent } from './pesquisa-heroi/pesquisa-heroi.componen
     FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
+      InMemoryDataService, { dataEncapsulation: false, delay: 1500 }
     )
   ],
   providers: [],
