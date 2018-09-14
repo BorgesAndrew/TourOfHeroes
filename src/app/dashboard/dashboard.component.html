@@ -1,9 +1,11 @@
 <h3>Herois mais Fortes</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let heroi of herois" class="col-1-4"
+  <a *ngFor="let heroi of herois" class="col-1-2"
   routerLink="/detail/{{heroi.id}}">
     <div class="module hero">
       <h4>{{heroi.nome}}</h4>
     </div>
   </a>
 </div>
+<app-pesquisa-heroi></app-pesquisa-heroi>      
+
