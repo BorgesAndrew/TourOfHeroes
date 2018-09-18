@@ -1,7 +1,7 @@
 <div id="search-component">
     <h4>Pesquisa Heroi</h4>
 
-    <input #searchBox id="searchBox" (keyup)="pesquisa(searchBox.value)" />
+    <input #searchBox id="searchBox" (keyup)="pesquisa(searchBox.value)"  />
 
       <ul class="search-result">
         <li *ngFor="let heroi of herois$ | async">
